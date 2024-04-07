@@ -7,7 +7,10 @@ from scraper import WebScraper
 async def main():
     path = Path(__file__).parent / "sources.json"
     scraper = WebScraper(path)
-    await scraper.scrape()
+    results = await scraper.scrape()
+    for result in results:
+        print(result)
+        print("="*20)
 
 if __name__ == '__main__':
     asyncio.run(main())
