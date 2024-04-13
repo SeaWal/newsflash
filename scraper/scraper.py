@@ -50,7 +50,7 @@ class WebScraper:
                 title = await self.__parse_selector(article_html, parse_rules['title_selector'])
                 href = await self.__parse_selector(article_html, parse_rules['href_selector'])
                 summary = await self.__parse_selector(article_html, parse_rules['summary_selector'])
-                article = Article(title.contents[0], href['href'], summary.contents[0])
+                article = Article(title.contents[0], href['href'], summary.contents[0], source['topic'])
                 articles.append(article)
             except Exception as e:
                 print(f"Error while parsing page {source['url']}. {e}")
