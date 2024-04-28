@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Articles</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
 </head>
 <body>
     <h1>Latest News Articles</h1>
-    <ul>
+    <ul class="news-item-list">
         {% for article in articles %}
-            <li>
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.summary }}</p>
+            <li class = "news-item">
+                <h2 class="news-item-title">{{ article.title }}</h2>
+                <p class="news-item-summary">{{ article.summary }}</p>
             </li>
         {% endfor %}
     </ul>
